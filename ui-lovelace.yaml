@@ -1,7 +1,7 @@
 title: Home
 resources:
   - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
-  type: module
+    type: module
 views: []
 dashboards:
   lovelace-weather:
