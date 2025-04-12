@@ -3,10 +3,4 @@ resources:
   - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
     type: module
 views: []
-dashboards:
-  lovelace-weather:
-    mode: yaml
-    title: Weather Dashboard
-    icon: mdi:weather-partly-cloudy
-    show_in_sidebar: true
-    filename: dashboards/weather.yaml        
+    
