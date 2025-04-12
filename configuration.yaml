@@ -13,3 +13,14 @@ scene: !include scenes.yaml
 weather:
   - platform: met
     name: Home
+
+# Lovelace Configuration
+lovelace:
+  mode: yaml
+  dashboards:
+    lovelace-weather:
+      mode: yaml
+      title: Weather Dashboard
+      icon: mdi:weather-partly-cloudy
+      show_in_sidebar: true
+      filename: dashboards/weather.yaml

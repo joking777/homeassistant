@@ -1,0 +1,37 @@
+title: Home
+views:
+  - title: Home
+    path: home
+    icon: mdi:home
+    cards:
+      - type: weather-forecast
+        entity: weather.home
+        name: Current Weather
+      - type: entities
+        title: Quick Access
+        entities:
+          - entity: sun.sun
+          - entity: sensor.date_time
+          - entity: sensor.time
+
+  - title: Weather
+    path: weather
+    icon: mdi:weather-partly-cloudy
+    cards:
+      # Current Weather Card
+      - type: weather-forecast
+        entity: weather.home
+        name: Current Weather
+      
+      # Hourly Forecast Card
+      - type: custom:weather-card
+        entity: weather.home
+        name: Hourly Forecast
+        mode: hourly
+      
+      # 10-Day Forecast Card
+      - type: custom:weather-card
+        entity: weather.home
+        name: 10-Day Forecast
+        mode: daily
+        number_of_forecasts: 10 
