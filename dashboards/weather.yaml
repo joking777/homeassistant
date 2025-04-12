@@ -1,0 +1,21 @@
+title: Weather Dashboard
+views:
+  - title: Weather
+    cards:
+      # Current Weather Card
+      - type: weather-forecast
+        entity: weather.home
+        name: Current Weather
+      
+      # Hourly Forecast Card
+      - type: custom:weather-card
+        entity: weather.home
+        name: Hourly Forecast
+        mode: hourly
+      
+      # 10-Day Forecast Card
+      - type: custom:weather-card
+        entity: weather.home
+        name: 10-Day Forecast
+        mode: daily
+        number_of_forecasts: 10 
