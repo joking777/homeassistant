@@ -4,18 +4,18 @@ views:
     cards:
       # Current Weather Card
       - type: weather-forecast
-        entity: weather.home
+        entity: weather.forecast_home
         name: Current Weather
       
       # Hourly Forecast Card
       - type: custom:weather-card
-        entity: weather.home
+        entity: weather.forecast_home
         name: Hourly Forecast
         mode: hourly
       
       # 10-Day Forecast Card
       - type: custom:weather-card
-        entity: weather.home
+        entity: weather.forecast_home
         name: 10-Day Forecast
         mode: daily
         number_of_forecasts: 10 
