@@ -68,26 +68,63 @@ views:
     path: security
     icon: mdi:security
     cards:
-      - type: picture-glance
-        title: Front Door
-        camera_image: camera.front_door
-        entities:
-          - entity: binary_sensor.front_door
-          - entity: binary_sensor.front_motion
-      - type: picture-glance
+      # Doorbell Camera
+      - type: picture-entity
+        title: Doorbell
+        entity: camera.front_door_doorbell
+        camera_view: live
+        show_state: false
+        show_name: true
+      
+      # Driveway Camera
+      - type: picture-entity
+        title: Driveway
+        entity: camera.driveway
+        camera_view: live
+        show_state: false
+        show_name: true
+
+      # Front Yard Camera
+      - type: picture-entity
+        title: Front Yard
+        entity: camera.front_yard
+        camera_view: live
+        show_state: false
+        show_name: true
+
+      # Back Yard Camera
+      - type: picture-entity
         title: Back Yard
-        camera_image: camera.back_yard
+        entity: camera.backyard
+        camera_view: live
+        show_state: false
+        show_name: true
+
+      # Camera Grid View
+      - type: grid
+        title: All Cameras
+        cards:
+          - type: picture-entity
+            entity: camera.front_door_doorbell
+            name: Doorbell
+          - type: picture-entity
+            entity: camera.driveway
+            name: Driveway
+          - type: picture-entity
+            entity: camera.front_yard
+            name: Front Yard
+          - type: picture-entity
+            entity: camera.backyard
+            name: Back Yard
+
+      # Motion Events
+      - type: history-graph
+        title: Camera Motion Events
         entities:
-          - entity: binary_sensor.back_door
-          - entity: binary_sensor.back_motion
-      - type: alarm-panel
-        entity: alarm_control_panel.home_alarm
-      - type: entities
-        title: Security Sensors
-        entities:
-          - entity: binary_sensor.garage_door
-          - entity: binary_sensor.window_sensors
-          - entity: binary_sensor.motion_sensors
+          - entity: binary_sensor.front_door_doorbell_motion
+          - entity: binary_sensor.driveway_motion
+          - entity: binary_sensor.front_yard_motion
+          - entity: binary_sensor.backyard_motion
 
   - title: Lighting
     path: lighting
