@@ -25,23 +25,87 @@ views:
     path: power
     icon: mdi:lightning-bolt
     cards:
-      - type: energy-distribution
-        title: Energy Distribution
-      - type: energy-usage-graph
-        title: Energy Usage Over Time
-      - type: entities
-        title: Power Consumption
-        entities:
-          - entity: sensor.total_power_consumption
-          - entity: sensor.solar_production
-          - entity: sensor.grid_consumption
+      # Weekly Power Consumption Overview
+      - type: custom:apexcharts-card
+        title: Last Week Power Usage
+        graph: line
+        span:
+          start: week
+        header:
+          show: true
+          title: Weekly Power Consumption
+        series:
+          - entity: sensor.span_total_power
+            name: Total House Power
+            stroke_width: 2
+            curve: smooth
+
+      # Top Power Consuming Circuits
+      - type: custom:auto-entities
+        card:
+          type: custom:mini-graph-card
+          title: Top 5 Power Consuming Circuits
+          hours_to_show: 168  # 1 week
+          group_by: date
+          aggregate_func: max
+          show:
+            graph: bar
+            legend: true
+            name: true
+            state: true
+        filter:
+          include:
+            - domain: sensor
+              attributes:
+                device_class: power
+              entity_id: "/^sensor.span_circuit.*_power/"
+          sort:
+            method: state
+            numeric: true
+            descending: true
+          limit: 5
+
+      # Solar Production
+      - type: custom:apexcharts-card
+        title: Solar Production
+        graph: area
+        span:
+          start: week
+        series:
+          - entity: sensor.span_solar_production
+            name: Solar Production
+            color: '#ffd700'
+            show:
+              in_chart: true
+              header_color: true
+        header:
+          show: true
+          title: Weekly Solar Production
+
+      # Current Power Flow
       - type: custom:power-flow-card
-        title: Power Flow
-      - type: custom:mini-graph-card
-        title: Daily Usage
+        title: Live Power Flow
         entities:
-          - entity: sensor.daily_energy_consumption
-        hours_to_show: 24
+          grid:
+            consumption: sensor.span_grid_consumption
+            production: sensor.span_grid_production
+          solar:
+            production: sensor.span_solar_production
+          home:
+            consumption: sensor.span_total_power
+
+      # Daily Overview
+      - type: entities
+        title: Today's Overview
+        entities:
+          - entity: sensor.span_total_power
+            name: Current House Usage
+          - entity: sensor.span_solar_production
+            name: Current Solar Production
+          - entity: sensor.span_daily_consumption
+            name: Today's Consumption
+          - entity: sensor.span_daily_solar_production
+            name: Today's Solar Production
 
   - title: Water
     path: water
