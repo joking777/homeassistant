@@ -45,7 +45,7 @@ views:
         card:
           type: custom:mini-graph-card
           title: Top 5 Power Consuming Circuits
-          hours_to_show: 168  # 1 week
+          hours_to_show: 168 # 1 week
           group_by: date
           aggregate_func: max
           show:
@@ -74,7 +74,7 @@ views:
         series:
           - entity: sensor.span_solar_production
             name: Solar Production
-            color: '#ffd700'
+            color: "#ffd700"
             show:
               in_chart: true
               header_color: true
@@ -139,7 +139,7 @@ views:
         camera_view: live
         show_state: false
         show_name: true
-      
+
       # Driveway Camera
       - type: picture-entity
         title: Driveway
@@ -221,6 +221,11 @@ views:
           - entity: scene.movie
 
 resources:
-  - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
+  - url: /hacsfiles/weather-card/dist/weather-card.min.js
     type: module
-    
+  - url: /hacsfiles/apexcharts-card/apexcharts-card.js
+    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/power-flow-card-plus/power-flow-card-plus.js
+    type: module
