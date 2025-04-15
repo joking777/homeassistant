@@ -24,3 +24,7 @@ lovelace:
       icon: mdi:weather-partly-cloudy
       show_in_sidebar: true
       filename: dashboards/weather.yaml
+
+strava:
+  client_id: !secret strava_client_id
+  client_secret: !secret strava_client_secret
