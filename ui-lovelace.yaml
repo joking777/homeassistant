@@ -229,3 +229,7 @@ resources:
     type: module
   - url: /hacsfiles/power-flow-card-plus/power-flow-card-plus.js
     type: module
+  - url: /hacsfiles/ha-map-card/map-card.js
+    type: module
+  - url: /hacsfiles/bar-card/bar-card.js
+    type: module
