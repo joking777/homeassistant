@@ -1,0 +1,29 @@
+- title: Overview
+  path: home
+  icon: mdi:home
+  badges:
+    - entity: sensor.refrigerator_temperature
+      name: Fridge Alert
+    - entity: binary_sensor.power_status
+      name: Power Status
+    - entity: weather.forecast_home
+      name: Weather Alert
+    - entity: binary_sensor.cameras_status
+      name: Cameras Status
+  cards:
+    - type: weather-forecast
+      entity: weather.forecast_home
+      name: Current Weather
+    - type: entities
+      title: Quick Access
+      entities:
+        - entity: sun.sun
+        - entity: sensor.date
+        - entity: sensor.time
+    - type: glance
+      title: House Status
+      entities:
+        - entity: binary_sensor.front_door
+        - entity: sensor.outside_temperature
+        - entity: sensor.house_power_consumption
+        - entity: sensor.water_consumption
