@@ -1,0 +1,20 @@
+title: Water
+path: water
+icon: mdi:water
+cards:
+  - type: custom:mini-graph-card
+    title: Water Usage
+    entities:
+      - entity: sensor.water_consumption
+    hours_to_show: 24
+  - type: entities
+    title: Water Metrics
+    entities:
+      - entity: sensor.water_pressure
+      - entity: sensor.water_flow_rate
+      - entity: sensor.daily_water_usage
+  - type: custom:apexcharts-card
+    title: Monthly Water Usage
+    graph: bar
+    entities:
+      - entity: sensor.monthly_water_consumption

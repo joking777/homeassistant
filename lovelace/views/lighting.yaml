@@ -1,0 +1,29 @@
+title: Lighting
+path: lighting
+icon: mdi:lightbulb-group
+cards:
+  - type: light
+    title: Living Room
+    entity: light.living_room
+  - type: entities
+    title: Indoor Lights
+    entities:
+      - entity: light.kitchen
+      - entity: light.dining_room
+      - entity: light.bedroom
+      - entity: light.bathroom
+  - type: entities
+    title: Outdoor Lights
+    entities:
+      - entity: light.porch
+      - entity: light.garage
+      - entity: light.backyard
+  - type: custom:light-entity-card
+    title: Light Controls
+    entity: light.living_room
+  - type: custom:mushroom-light-card
+    title: Scene Controls
+    entities:
+      - entity: scene.morning
+      - entity: scene.evening
+      - entity: scene.movie

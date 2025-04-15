@@ -1,0 +1,82 @@
+title: Fitness
+path: fitness
+icon: mdi:run
+cards:
+  # Recent Activities
+  - type: custom:mini-graph-card
+    title: Weekly Activities
+    entities:
+      - entity: sensor.strava_weekly_distance
+        name: Distance
+    hours_to_show: 168
+    show:
+      graph: bar
+      labels: true
+
+  # Latest Activity Details
+  - type: entities
+    title: Latest Activity
+    entities:
+      - entity: sensor.strava_latest_activity
+        name: Activity Name
+      - entity: sensor.strava_latest_activity_type
+        name: Type
+      - entity: sensor.strava_latest_activity_distance
+        name: Distance
+      - entity: sensor.strava_latest_activity_moving_time
+        name: Moving Time
+      - entity: sensor.strava_latest_activity_elapsed_time
+        name: Total Time
+      - entity: sensor.strava_latest_activity_speed
+        name: Average Speed
+      - entity: sensor.strava_latest_activity_elevation_gain
+        name: Elevation Gain
+
+  # Monthly Stats
+  - type: custom:apexcharts-card
+    title: Monthly Stats
+    graph: bar
+    span:
+      start: month
+    series:
+      - entity: sensor.strava_monthly_distance
+        name: Distance
+      - entity: sensor.strava_monthly_elevation_gain
+        name: Elevation Gain
+        yaxis_id: elevation
+
+  # Activity Map
+  - type: custom:map-card
+    title: Latest Activity Map
+    entities:
+      - entity: sensor.strava_latest_activity_map
+    hours_to_show: 24
+    default_zoom: 13
+
+  # Year to Date Stats
+  - type: glance
+    title: Year to Date
+    entities:
+      - entity: sensor.strava_ytd_run_distance
+        name: Running
+        icon: mdi:run
+      - entity: sensor.strava_ytd_ride_distance
+        name: Cycling
+        icon: mdi:bike
+      - entity: sensor.strava_ytd_swim_distance
+        name: Swimming
+        icon: mdi:swim
+      - entity: sensor.strava_ytd_elevation_gain
+        name: Elevation
+        icon: mdi:elevation-rise
+
+  # Activity Goals
+  - type: custom:bar-card
+    title: Goals Progress
+    entities:
+      - entity: sensor.strava_weekly_distance
+        name: Weekly Distance
+        target: 40
+      - entity: sensor.strava_monthly_activities
+        name: Monthly Activities
+        target: 20
