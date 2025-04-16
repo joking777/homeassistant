@@ -1,0 +1,9 @@
+friendly_name: "Cameras Status"
+device_class: problem
+value_template: >-
+  {{ not (
+    is_state('camera.front_door_doorbell', 'unavailable') or 
+    is_state('camera.driveway', 'unavailable') or 
+    is_state('camera.front_yard', 'unavailable') or 
+    is_state('camera.backyard', 'unavailable')
+  ) }}

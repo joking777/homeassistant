@@ -1,35 +1,9 @@
 title: Home Dashboard
 views:
-  - !include /config/lovelace/views/overview.yaml
-  - !include /config/lovelace/views/power.yaml
-  - !include /config/lovelace/views/security.yaml
-  - !include /config/lovelace/views/water.yaml
-  - !include /config/lovelace/views/fitness.yaml  
+  - !include lovelace/views/overview.yaml
+  - !include lovelace/views/power.yaml
+  - !include lovelace/views/security.yaml
+  - !include lovelace/views/water.yaml
+  - !include lovelace/views/fitness.yaml
 
-binary_sensor:
-  - platform: template
-    sensors:
-      cameras_status:
-        friendly_name: "Cameras Status"
-        device_class: problem
-        value_template: >-
-          {{ not (
-            is_state('camera.front_door_doorbell', 'unavailable') or 
-            is_state('camera.driveway', 'unavailable') or 
-            is_state('camera.front_yard', 'unavailable') or 
-            is_state('camera.backyard', 'unavailable')
-          ) }}
-
-resources:
-  - url: /hacsfiles/weather-card/dist/weather-card.min.js
-    type: module
-  - url: /hacsfiles/apexcharts-card/apexcharts-card.js
-    type: module
-  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-    type: module
-  - url: /hacsfiles/power-flow-card-plus/power-flow-card-plus.js
-    type: module
-  - url: /hacsfiles/ha-map-card/map-card.js
-    type: module
-  - url: /hacsfiles/bar-card/bar-card.js
-    type: module
+resources: !include_dir_list resources

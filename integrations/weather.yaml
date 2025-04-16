@@ -1,0 +1,3 @@
+# Weather integration
+- platform: met
+  name: Home

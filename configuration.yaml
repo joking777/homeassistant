@@ -8,23 +8,8 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+template:
+  - binary_sensor: !include_dir_merge_list templates/binary_sensors/
 
-# Weather integration
-weather:
-  - platform: met
-    name: Home
-
-# Lovelace Configuration
-lovelace:
-  mode: yaml
-  dashboards:
-    lovelace-weather:
-      mode: yaml
-      title: Weather Dashboard
-      icon: mdi:weather-partly-cloudy
-      show_in_sidebar: true
-      filename: dashboards/weather.yaml
-
-strava:
-  client_id: !secret strava_client_id
-  client_secret: !secret strava_client_secret
+lovelace: !include integrations/lovelace.yaml
+weather: !include integrations/weather.yaml
