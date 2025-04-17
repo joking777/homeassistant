@@ -1,3 +1,4 @@
+# Contents for lovelace/views/finance.yaml
 title: Finance
 path: finance
 icon: mdi:finance
@@ -11,14 +12,28 @@ badges:
   - entity: binary_sensor.chase_sapphire_high_balance_alert
     name: Sapphire High
 cards:
-  # You can add other non-sensitive finance cards here if desired.
-  # For example, budget category status if the YNAB integration provides them.
   - type: markdown
     content: >
       **Financial Alerts**
 
       Badges above will turn red/yellow if account thresholds are met.
       (Thresholds are configured in `configuration.yaml`)
+
+  # --- ADD THIS CARD ---
+  - type: entities
+    title: Market Data
+    entities:
+      - entity: sensor.alpha_vantage_gold # Replace with your actual Gold entity ID (e.g., from Alpha Vantage)
+        name: Gold (XAU/USD)
+      - entity: sensor.coinbase_btc_usd # Replace with your actual Bitcoin entity ID (e.g., from Coinbase or other crypto integration)
+        name: Bitcoin (BTC/USD)
+      - entity: sensor.alpha_vantage_spy # Replace with your actual S&P 500 entity ID (e.g., SPY from Alpha Vantage)
+        name: S&P 500 (SPY)
+      - entity: sensor.alpha_vantage_dia # Replace with your actual Dow Jones entity ID (e.g., DIA from Alpha Vantage)
+        name: Dow Jones (DIA)
+      - entity: sensor.alpha_vantage_qqq # Replace with your actual Nasdaq entity ID (e.g., QQQ from Alpha Vantage)
+        name: Nasdaq 100 (QQQ)
+  # --- END OF ADDED CARD ---
 
   # Example: Add YNAB Budget Category info if available (replace entities)
   # - type: entities
