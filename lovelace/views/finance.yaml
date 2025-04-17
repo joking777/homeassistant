@@ -1,0 +1,29 @@
+title: Finance
+path: finance
+icon: mdi:finance
+badges:
+  - entity: binary_sensor.checking_low_balance_alert
+    name: Checking Low # Optional name override for badge
+  - entity: binary_sensor.savings_low_balance_alert
+    name: Savings Low
+  - entity: binary_sensor.chase_amazon_high_balance_alert
+    name: Amazon High
+  - entity: binary_sensor.chase_sapphire_high_balance_alert
+    name: Sapphire High
+cards:
+  # You can add other non-sensitive finance cards here if desired.
+  # For example, budget category status if the YNAB integration provides them.
+  - type: markdown
+    content: >
+      **Financial Alerts**
+
+      Badges above will turn red/yellow if account thresholds are met.
+      (Thresholds are configured in `configuration.yaml`)
+
+  # Example: Add YNAB Budget Category info if available (replace entities)
+  # - type: entities
+  #   title: Budget Categories
+  #   entities:
+  #     - entity: sensor.ynab_category_groceries_balance
+  #     - entity: sensor.ynab_category_dining_out_balance
+  #     - entity: sensor.ynab_category_transportation_balance

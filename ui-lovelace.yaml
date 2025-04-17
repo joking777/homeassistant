@@ -5,5 +5,7 @@ views:
   - !include lovelace/views/security.yaml
   - !include lovelace/views/water.yaml
   - !include lovelace/views/fitness.yaml
+  - !include lovelace/views/network.yaml
+  - !include lovelace/views/finance.yaml
 
 resources: !include_dir_list resources

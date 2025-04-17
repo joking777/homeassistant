@@ -1,0 +1,9 @@
+# Savings Low Balance Alert
+name: "Savings Low Balance Alert"
+unique_id: savings_low_balance_alert_01
+device_class: problem
+state: >
+  {% set threshold = 1000 %} {# <--- SET YOUR LOW SAVINGS THRESHOLD HERE #}
+  {{ states('sensor.ynab_savings_account_balance') | float(0) < threshold }} {# <--- REPLACE with your actual YNAB savings balance entity ID #}
+attributes:
+  friendly_name: "Savings Balance Low"

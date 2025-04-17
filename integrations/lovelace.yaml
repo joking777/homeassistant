@@ -5,4 +5,4 @@ dashboards:
     title: Weather Dashboard
     icon: mdi:weather-partly-cloudy
     show_in_sidebar: true
-    filename: dashboards/weather.yaml
+    filename: lovelacedashboards/weather.yaml

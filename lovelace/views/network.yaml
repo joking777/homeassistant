@@ -1,0 +1,63 @@
+# Contents for views/network.yaml
+title: Network
+path: network
+icon: mdi:network
+cards:
+# Verizon Router Status
+  - type: entities
+    title: Verizon Router
+    entities:
+      - entity: sensor.verizon_router_connection_status # Replace with your actual entity
+        name: Connection Status
+      - entity: sensor.verizon_router_wan_ip_address # Replace with your actual entity
+        name: WAN IP Address
+      - entity: sensor.verizon_router_download_speed # Replace with your actual entity
+        name: Download Speed
+      - entity: sensor.verizon_router_upload_speed # Replace with your actual entity
+        name: Upload Speed
+      - entity: sensor.verizon_router_data_usage # Replace with your actual entity
+        name: Data Usage
+
+  # Eero Mesh Network Status
+  - type: entities
+    title: Eero Mesh Network
+    entities:
+      - entity: sensor.eero_network_status # Replace with your actual entity
+        name: Network Status
+      - entity: sensor.eero_connected_devices_count # Replace with your actual entity
+        name: Connected Devices
+      - entity: sensor.eero_upload_throughput # Replace with your actual entity
+        name: Upload Throughput
+      - entity: sensor.eero_download_throughput # Replace with your actual entity
+        name: Download Throughput
+  - type: glance
+    title: Eero Nodes
+    entities:
+      - entity: binary_sensor.eero_node_1_status # Replace with actual entities
+      - entity: binary_sensor.eero_node_2_status
+      # Add more nodes as needed
+
+  # Pixel 6a Status (Home Assistant Companion App)
+  - type: entities
+    title: Pixel 6a (Michael's Phone) # Adjust name as needed
+    entities:
+      - entity: sensor.pixel_6a_connection_type # Replace with your actual entity
+        name: Connection Type (WiFi/Cellular)
+      - entity: sensor.pixel_6a_wifi_ssid # Replace with your actual entity
+        name: WiFi Network
+      - entity: sensor.pixel_6a_wifi_signal_strength # Replace with your actual entity
+        name: WiFi Signal
+      - entity: sensor.pixel_6a_sim_1 # Replace with your actual entity (Might show carrier like Google Fi)
+        name: Carrier (SIM 1)
+      - entity: sensor.pixel_6a_battery_level # Replace with your actual entity
+        name: Battery Level
+      - entity: device_tracker.pixel_6a # Replace with your actual entity
+        name: Location
+
+  # Network Speed History
+  - type: history-graph
+    title: Internet Speed History (Last 24h)
+    entities:
+      - entity: sensor.verizon_router_download_speed # Replace with your actual entity
+      - entity: sensor.verizon_router_upload_speed # Replace with your actual entity
+    hours_to_show: 24
