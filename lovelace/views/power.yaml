@@ -3,19 +3,34 @@ path: power
 icon: mdi:lightning-bolt
 cards:
   # Weekly Power Consumption Overview
-  - type: custom:apexcharts-card
-    title: Last Week Power Usage
+  - type: sensor
+    entity: sensor.span_panel_current_power
     graph: line
-    span:
-      start: week
-    header:
-      show: true
-      title: Weekly Power Consumption
-    series:
-      - entity: sensor.span_total_power
-        name: Total House Power
-        stroke_width: 2
-        curve: smooth
+  - type: sensor
+    entity: sensor.span_panel_main_meter_consumed_energy
+    graph: line
+  - type: sensor
+    entity: sensor.span_panel_solar_inverter_energy_produced
+    graph: line
+  # - type: "custom:template-card"
+  #   card_id: "top_5_sensors"
+  #   card_type: "custom:template-card"
+  #   template_content: |
+  #     {{ top_five_cicuits }}
+
+  # - type: custom:apexcharts-card
+  #   # title: Last Week Power Usage
+  #   # graph: line
+  #   span:
+  #     start: week
+  #   header:
+  #     show: true
+  #     title: Weekly Power Consumption
+  #   series:
+  #     - entity: sensor.span_panel_main_meter_consumed_energy
+  #       name: Total House Power
+  #       stroke_width: 2
+  #       curve: smooth
 
   # Top Power Consuming Circuits
   - type: custom:auto-entities

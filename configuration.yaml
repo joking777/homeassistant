@@ -1,15 +1,36 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
+# Home Assistant configuration
+homeassistant:
+  debug: true
+
+# Load automations from the default file
+automation: !include automations.yaml
+
 # Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
 
-automation: !include automations.yaml
+# Load scripts from the default file
 script: !include scripts.yaml
-scene: !include scenes.yaml
-template:
-  - binary_sensor: !include_dir_merge_list templates/binary_sensors/
 
+# Load scenes from the default file
+scene: !include scenes.yaml
+
+# Load resources from the resources directory
+# resources: !include_dir_list resources/
+
+# Load templates for sensors from subdirectories
+template: !include_dir_merge_list templates
+
+# Load logger file
+logger: !include logger.yaml
+
+# Load lovelace integration
 lovelace: !include integrations/lovelace.yaml
-weather: !include integrations/weather.yaml
+# Load weather integration
+# weather: !include integrations/weather.yaml
+
+# Load the YNAB integration
+#ynab: !include integrations/ynab.yaml

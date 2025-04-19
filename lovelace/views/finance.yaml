@@ -19,7 +19,6 @@ cards:
       Badges above will turn red/yellow if account thresholds are met.
       (Thresholds are configured in `configuration.yaml`)
 
-  # --- ADD THIS CARD ---
   - type: entities
     title: Market Data
     entities:
@@ -33,12 +32,10 @@ cards:
         name: Dow Jones (DIA)
       - entity: sensor.alpha_vantage_qqq # Replace with your actual Nasdaq entity ID (e.g., QQQ from Alpha Vantage)
         name: Nasdaq 100 (QQQ)
-  # --- END OF ADDED CARD ---
 
-  # Example: Add YNAB Budget Category info if available (replace entities)
-  # - type: entities
-  #   title: Budget Categories
-  #   entities:
-  #     - entity: sensor.ynab_category_groceries_balance
-  #     - entity: sensor.ynab_category_dining_out_balance
-  #     - entity: sensor.ynab_category_transportation_balance
+  - type: entities
+    title: Budget Categories
+    entities:
+      - entity: sensor.tumble_dryer_finish_at
+    #  - entity: sensor.ynab_category_dining_out_balance
+    #  - entity: sensor.ynab_category_transportation_balance

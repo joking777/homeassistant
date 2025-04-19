@@ -3,7 +3,7 @@ title: Network
 path: network
 icon: mdi:network
 cards:
-# Verizon Router Status
+  # Verizon Router Status
   - type: entities
     title: Verizon Router
     entities:
@@ -41,14 +41,18 @@ cards:
   - type: entities
     title: Pixel 6a (Michael's Phone) # Adjust name as needed
     entities:
-      - entity: sensor.pixel_6a_connection_type # Replace with your actual entity
-        name: Connection Type (WiFi/Cellular)
-      - entity: sensor.pixel_6a_wifi_ssid # Replace with your actual entity
-        name: WiFi Network
-      - entity: sensor.pixel_6a_wifi_signal_strength # Replace with your actual entity
-        name: WiFi Signal
-      - entity: sensor.pixel_6a_sim_1 # Replace with your actual entity (Might show carrier like Google Fi)
-        name: Carrier (SIM 1)
+      # - entity: sensor.pixel_6a_connection_type # Replace with your actual entity
+      #   name: Connection Type (WiFi/Cellular)
+      # - entity: sensor.pixel_6a_wifi_ssid # Replace with your actual entity
+      #   name: WiFi Network
+      # - entity: sensor.pixel_6a_wifi_signal_strength # Replace with your actual entity
+      #   name: WiFi Signal
+      # - entity: sensor.pixel_6a_sim_1 # Replace with your actual entity (Might show carrier like Google Fi)
+      #   name: Carrier (SIM 1)
+      - entity: sensor.pixel_6a_charger_type
+        name: "Charger Type"
+      - entity: sensor.pixel_6a_battery_state
+        name: Battery State
       - entity: sensor.pixel_6a_battery_level # Replace with your actual entity
         name: Battery Level
       - entity: device_tracker.pixel_6a # Replace with your actual entity
