@@ -1,0 +1,6 @@
+api_key: !secret ynab_api_key
+name: "Primary"
+budget: ! secret ynab_budget_id
+currency: "$"
+categories: !secret ynab_categories
+accounts: !secret ynab_accounts

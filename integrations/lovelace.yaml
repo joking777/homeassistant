@@ -6,3 +6,5 @@ dashboards:
     icon: mdi:weather-partly-cloudy
     show_in_sidebar: true
     filename: lovelacedashboards/weather.yaml
+resources: !include_dir_list ../resources
+#reload_resources: true
