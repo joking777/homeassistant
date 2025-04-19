@@ -1,9 +1,10 @@
 # Chase Amazon High Balance Alert
-name: "Chase Amazon High Balance Alert"
-unique_id: chase_amazon_high_balance_alert_01
-device_class: problem
-state: >
-  {% set threshold = 1500 %} {# <--- SET YOUR HIGH AMAZON CARD THRESHOLD HERE #}
-  {{ states('sensor.ynab_chase_amazon_balance') | float(0) > threshold }} {# <--- REPLACE with your actual YNAB Chase Amazon balance entity ID #}
-attributes:
-  friendly_name: "Chase Amazon High"
+- binary_sensor:
+    - name: "Chase Amazon High Balance Alert"
+      unique_id: chase_amazon_high_balance_alert_01
+      device_class: problem
+      state: >
+        {% set threshold = 1500 %} {# <--- SET YOUR HIGH AMAZON CARD THRESHOLD HERE #}
+        {{ states('sensor.ynab_chase_amazon_balance') | float(0) > threshold }} {# <--- REPLACE with your actual YNAB Chase Amazon balance entity ID #}
+      attributes:
+        friendly_name: "Chase Amazon High"

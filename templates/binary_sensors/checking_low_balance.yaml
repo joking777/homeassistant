@@ -1,9 +1,10 @@
-# Checking Low Balance Alert
-name: "Checking Low Balance Alert"
-unique_id: checking_low_balance_alert_01 # Optional but recommended
-device_class: problem # Shows as problem when 'on'
-state: >
-  {% set threshold = 500 %} {# <--- SET YOUR LOW CHECKING THRESHOLD HERE #}
-  {{ states('sensor.ynab_checking_account_balance') | float(0) < threshold }} {# <--- REPLACE with your actual YNAB checking balance entity ID #}
-attributes:
-  friendly_name: "Checking Balance Low"
+- binary_sensor:
+    # Checking Low Balance Alert
+    - name: "Checking Low Balance Alert"
+      unique_id: checking_low_balance_alert_01 # Optional but recommended
+      device_class: problem
+      state: >
+        {% set threshold = 500 %} {# <--- SET YOUR LOW CHECKING THRESHOLD HERE #}
+        {{ states('sensor.ynab_checking_account_balance') | float(0) < threshold }} {# <--- REPLACE with your actual YNAB checking balance entity ID #}
+      attributes:
+        friendly_name: "Checking Balance Low"

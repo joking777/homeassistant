@@ -1,0 +1,3 @@
+- binary_sensor:
+    - name: "Wifi"
+      state: "{{ is_state('sensor.pixel_6a_wi_fi_connection', 'Isengard') }}"

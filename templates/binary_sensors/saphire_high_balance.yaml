@@ -1,9 +1,10 @@
-# Chase Sapphire High Balance Alert
-name: "Chase Sapphire High Balance Alert"
-unique_id: chase_sapphire_high_balance_alert_01
-device_class: problem
-state: >
-  {% set threshold = 2000 %} {# <--- SET YOUR HIGH SAPPHIRE CARD THRESHOLD HERE #}
-  {{ states('sensor.ynab_chase_sapphire_balance') | float(0) > threshold }} {# <--- REPLACE with your actual YNAB Chase Sapphire balance entity ID #}
-attributes:
-  friendly_name: "Chase Sapphire High"
+- binary_sensor:
+    # Chase Sapphire High Balance Alert
+    - name: "Chase Sapphire High Balance Alert"
+      unique_id: chase_sapphire_high_balance_alert_01
+      device_class: problem
+      state: >
+        {% set threshold = 2000 %} {# <--- SET YOUR HIGH SAPPHIRE CARD THRESHOLD HERE #}
+        {{ states('sensor.ynab_chase_sapphire_balance') | float(0) > threshold }} {# <--- REPLACE with your actual YNAB Chase Sapphire balance entity ID #}
+      attributes:
+        friendly_name: "Chase Sapphire High"

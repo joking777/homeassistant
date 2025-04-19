@@ -1,0 +1,5 @@
+- sensor:
+    - name: "Top 5 Circuits"
+      state: "{% set top_five_sensors = states.sensor | selectattr('device_class', 'eq', 'energy') | list | sort(attribute='state', reverse=false) | map(attribute='entity_id') | list | slice(5) %}"
+      unit_of_measurement: "kW"
+      icon: "mdi:electric-switch"
