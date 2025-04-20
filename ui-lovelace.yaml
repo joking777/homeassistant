@@ -7,6 +7,8 @@ views:
   - !include lovelace/views/fitness.yaml
   - !include lovelace/views/network.yaml
   - !include lovelace/views/finance.yaml
+  - !include lovelace/views/pool.yaml
+  - !include lovelace/views/media.yaml
 
 # resources: !include_dir_list resources
 resources:
@@ -23,4 +25,6 @@ resources:
   - url: /hacsfiles/power-flow-card-plus/power-flow-card-plus.js
     type: module
   - url: /hacsfiles/weather-card/dist/weather-card.min.js
+    type: module
+  - url: /hacsfiles/spotify-card/spotify-card.js
     type: module

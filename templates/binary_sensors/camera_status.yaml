@@ -1,8 +1,9 @@
 - binary_sensor:
     - name: "Cameras Status"
+      unique_id: 5192cd8b2c4d786c231ff25b7949798b
       device_class: problem
       state: >-
-        {{ not (
+        {{ (
           is_state('camera.front_door_doorbell', 'unavailable') or 
           is_state('camera.driveway', 'unavailable') or 
           is_state('camera.front_yard', 'unavailable') or 

@@ -10,7 +10,7 @@ cards:
     entity: sensor.span_panel_main_meter_consumed_energy
     graph: line
   - type: sensor
-    entity: sensor.span_panel_solar_inverter_energy_produced
+    entity: sensor.span_panel_solar_inverter_instant_power
     graph: line
   - type: custom:html-template-card
     title: "Top 5 Circuits"

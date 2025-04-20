@@ -1,0 +1,9 @@
+title: Media
+path: media
+icon: mdi:music
+cards: 
+  - type: media-control
+    entity: media_player.basement_tv_2
+  - type: tile
+    entity: media_player.spotify_shoshanna_king
+
