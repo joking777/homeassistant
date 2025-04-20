@@ -12,6 +12,11 @@ cards:
   - type: sensor
     entity: sensor.span_panel_solar_inverter_energy_produced
     graph: line
+  - type: custom:html-template-card
+    title: "Top 5 Circuits"
+    ignore_line_breaks: true
+    content: |
+      {{ top_five_cicuits }}
   # - type: "custom:template-card"
   #   card_id: "top_5_sensors"
   #   card_type: "custom:template-card"
@@ -33,68 +38,66 @@ cards:
   #       curve: smooth
 
   # Top Power Consuming Circuits
-  - type: custom:auto-entities
-    card:
-      type: custom:mini-graph-card
-      title: Top 5 Power Consuming Circuits
-      hours_to_show: 168 # 1 week
-      group_by: date
-      aggregate_func: max
-      show:
-        graph: bar
-        legend: true
-        name: true
-        state: true
-    filter:
-      include:
-        - domain: sensor
-          attributes:
-            device_class: power
-          entity_id: "/^sensor.span_circuit.*_power/"
-      sort:
-        method: state
-        numeric: true
-        descending: true
-      limit: 5
+  # - type: custom:auto-entities
+  #   card:
+  #     type: custom:mini-graph-card
+  #     title: Top 5 Power Consuming Circuits
+  #     hours_to_show: 168 # 1 week
+  #     group_by: date
+  #     aggregate_func: max
+  #     show:
+  #       graph: bar
+  #       legend: true
+  #       name: true
+  #       state: true
+  #   filter:
+  #     include:
+  #       - domain: sensor
+  #         attributes:
+  #           device_class: power
+  #         entity_id: "/^sensor.span_circuit.*_power/"
+  #     sort:
+  #       method: state
+  #       numeric: true
+  #       descending: true
+  #     limit: 5
 
   # Solar Production
-  - type: custom:apexcharts-card
-    title: Solar Production
-    graph: area
-    span:
-      start: week
-    series:
-      - entity: sensor.span_solar_production
-        name: Solar Production
-        color: "#ffd700"
-        show:
-          in_chart: true
-          header_color: true
-    header:
-      show: true
-      title: Weekly Solar Production
+  # - type: custom:apexcharts-card
+  #   span:
+  #     start: week
+  #   series:
+  #     - entity: sensor.span_solar_production
+  #       name: Solar Production
+  #       color: "#ffd700"
+  #       show:
+  #         in_chart: true
+  #         header_color: true
+  #   header:
+  #     show: true
+  #     title: Weekly Solar Production
 
   # Current Power Flow
-  - type: custom:power-flow-card
-    title: Live Power Flow
-    entities:
-      grid:
-        consumption: sensor.span_grid_consumption
-        production: sensor.span_grid_production
-      solar:
-        production: sensor.span_solar_production
-      home:
-        consumption: sensor.span_total_power
+  # - type: custom:power-flow-card-plus
+  #   title: Live Power Flow
+  #   entities:
+  #     grid:
+  #       consumption: sensor.span_grid_consumption
+  #       production: sensor.span_grid_production
+  #     solar:
+  #       production: sensor.span_solar_production
+  #     home:
+  #       consumption: sensor.span_total_power
 
   # Daily Overview
-  - type: entities
-    title: Today's Overview
-    entities:
-      - entity: sensor.span_total_power
-        name: Current House Usage
-      - entity: sensor.span_solar_production
-        name: Current Solar Production
-      - entity: sensor.span_daily_consumption
-        name: Today's Consumption
-      - entity: sensor.span_daily_solar_production
-        name: Today's Solar Production
+  # - type: entities
+  #   title: Today's Overview
+  #   entities:
+  #     - entity: sensor.span_total_power
+  #       name: Current House Usage
+  #     - entity: sensor.span_solar_production
+  #       name: Current Solar Production
+  #     - entity: sensor.span_daily_consumption
+  #       name: Today's Consumption
+  #     - entity: sensor.span_daily_solar_production
+  #       name: Today's Solar Production

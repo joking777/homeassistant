@@ -23,7 +23,7 @@ cards:
   - type: glance
     title: House Status
     entities:
-      - entity: binary_sensor.front_door
+      - entity: binary_sensor.cameras_status
       - entity: sensor.outside_temperature
       - entity: sensor.house_power_consumption
       - entity: sensor.water_consumption

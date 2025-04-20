@@ -34,8 +34,6 @@ cards:
 
   # Monthly Stats
   - type: custom:apexcharts-card
-    title: Monthly Stats
-    graph: bar
     span:
       start: month
     series:

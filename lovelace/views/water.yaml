@@ -13,8 +13,8 @@ cards:
       - entity: sensor.water_pressure
       - entity: sensor.water_flow_rate
       - entity: sensor.daily_water_usage
-  - type: custom:apexcharts-card
-    title: Monthly Water Usage
-    graph: bar
-    entities:
-      - entity: sensor.monthly_water_consumption
+  # - type: custom:apexcharts-card
+  #   title: Monthly Water Usage
+  #   graph: bar
+  #   entities:
+  #     - entity: sensor.monthly_water_consumption

@@ -8,4 +8,19 @@ views:
   - !include lovelace/views/network.yaml
   - !include lovelace/views/finance.yaml
 
-resources: !include_dir_list resources
+# resources: !include_dir_list resources
+resources:
+  - url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
+    type: module
+  - url: /hacsfiles/apexcharts-card/apexcharts-card.js
+    type: module
+  - url: /hacsfiles/bar-card/bar-card.js
+    type: module
+  - url: /hacsfiles/ha-map-card/map-card.js
+    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/power-flow-card-plus/power-flow-card-plus.js
+    type: module
+  - url: /hacsfiles/weather-card/dist/weather-card.min.js
+    type: module

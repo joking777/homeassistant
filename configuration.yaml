@@ -2,8 +2,8 @@
 default_config:
 
 # Home Assistant configuration
-homeassistant:
-  debug: true
+# homeassistant:
+#   debug: true
 
 # Load automations from the default file
 automation: !include automations.yaml
