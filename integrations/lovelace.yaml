@@ -1,10 +1,11 @@
 mode: yaml
 dashboards:
-  lovelace-weather:
-    mode: yaml
-    title: Weather Dashboard
-    icon: mdi:weather-partly-cloudy
-    show_in_sidebar: true
-    filename: lovelacedashboards/weather.yaml
+  {}
+  # lovelace-weather:
+  #   mode: yaml
+  #   title: Weather Dashboard
+  #   icon: mdi:weather-partly-cloudy
+  #   show_in_sidebar: true
+  #   filename: lovelacedashboards/weather.yaml
 resources: !include_dir_list ../resources
 #reload_resources: true

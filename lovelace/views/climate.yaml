@@ -1,0 +1,23 @@
+title: Climate
+path: climate
+icon: mdi:home-thermometer
+cards:
+  - type: thermostat
+    entity: climate.system_zone_1
+    name: Thermostat
+  - type: weather-forecast
+    entity: weather.forecast_home
+    name: Current Weather
+  - type: entities
+    entities:
+      - entity: sensor.span_panel_ac_condenser_consumed_energy
+        name: Condenser
+      - entity: sensor.span_panel_furnace_consumed_energy
+        name: Furnace
+    title: Power Use
+  - type: sensor
+    entity: sensor.span_panel_ac_condenser_power
+    graph: line
+  - type: sensor
+    entity: sensor.span_panel_furnace_power
+    graph: line

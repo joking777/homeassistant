@@ -1,0 +1,40 @@
+title: Appliances
+path: appliances
+icon: mdi:washing-machine
+cards:
+  - type: entities
+    entities:
+      - switch.washing_machine_power_on
+      - button.washing_machine_start
+      - button.washing_machine_stop
+    title: Washing machine
+  - type: entities
+    entities:
+      - switch.tz537370_fridge_ice_boost
+      - switch.tz537370_proximity_light
+      - switch.tz537370_turbo_freeze_status
+      - sensor.tz537370_door_status
+      - sensor.tz537370_water_filter_status
+      - sensor.tz537370_ice_maker_bucket_status
+      - sensor.tz537370_ice_maker_bucket_status_state_full_fridge
+      - binary_sensor.tz537370_door_status_any_open
+      - binary_sensor.tz537370_ice_maker_control_status_fridge
+    title: Refrigerator
+  - type: entities
+    entities:
+      - entity: sensor.span_panel_dishwasher_consumed_energy
+        name: Dishwasher
+      - entity: sensor.span_panel_dryer_consumed_energy
+        name: Dryer
+      - entity: sensor.span_panel_outlets_kitchen_consumed_energy
+        name: Refrigerator
+    title: Power Use
+  - type: sensor
+    entity: sensor.span_panel_dishwasher_power
+    graph: line
+  - type: sensor
+    entity: sensor.span_panel_dryer_power
+    graph: line
+  - type: sensor
+    entity: sensor.span_panel_outlets_kitchen_power
+    graph: line

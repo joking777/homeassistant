@@ -2,7 +2,6 @@ title: Pool & Spa
 path: pool
 icon: mdi:pool
 cards:
-  # Weekly Power Consumption Overview
   - type: sensor
     entity: sensor.span_panel_subpanel_power
     graph: line

@@ -9,6 +9,8 @@ views:
   - !include lovelace/views/finance.yaml
   - !include lovelace/views/pool.yaml
   - !include lovelace/views/media.yaml
+  - !include lovelace/views/climate.yaml
+  - !include lovelace/views/appliances.yaml
 
 # resources: !include_dir_list resources
 resources:

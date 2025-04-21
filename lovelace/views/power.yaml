@@ -17,6 +17,14 @@ cards:
     ignore_line_breaks: true
     content: |
       {{ top_five_cicuits }}
+  # - type: custom:auto-entities
+  #   card:
+  #     type: entities
+  #     title: Top 5
+  #   filter:
+  #     template: {{ expand(states.sensor | selectattr('attributes.device_class', 'eq', 'energy') | selectattr('name', 'search', '(?i)consumed') | sort(attribute='state', reverse=true) | map(attribute='entity_id') | slice(5) | first | list) }}
+
+  # entities: {% states.sensor | selectattr('attributes.device_class', 'eq', 'energy') | selectattr('name', 'search', '(?i)consumed') | sort(attribute='state', reverse=true) | map(attribute='entity_id') | slice(5) | first | list %}
   # - type: "custom:template-card"
   #   card_id: "top_5_sensors"
   #   card_type: "custom:template-card"
